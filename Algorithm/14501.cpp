@@ -36,13 +36,10 @@ int main(void) {
 
 	for (int i = 0; i < N; i++) {
 		int input1, input2;
-
 		cin >> input1 >> input2;
 		Ti.push_back(input1);
 		Pi.push_back(input2);
-
 	}
-
 	solve(0, 0);
 	cout << MAX;
 }
