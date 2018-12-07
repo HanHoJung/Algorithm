@@ -2,13 +2,13 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-int n; //¹è¿­ÀÇ °¹¼ö
+int n; //ë°°ì—´ì˜ ê°¯ìˆ˜
 int MAX;
 int MIN;
 bool check;
-vector<int> oper;//¿¬»êÀÚ °³¼ö ¹è¿­ +,-,*,/
-vector<int> arr;//¿ø¼ÒÀÇ °ª
-vector<int> brr;//¿¬»êÀÚ ¹è¿­
+vector<int> oper;//ì—°ì‚°ì ê°œìˆ˜ ë°°ì—´ +,-,*,/
+vector<int> arr;//ì›ì†Œì˜ ê°’
+vector<int> brr;//ì—°ì‚°ì ë°°ì—´
 int count1;
 int calculate() {
 
@@ -42,7 +42,7 @@ int calculate() {
 void solve(int cnt) {
 
 
-	if (cnt > n) {
+	if (cnt >= n) {
 		return;
 	}
 
