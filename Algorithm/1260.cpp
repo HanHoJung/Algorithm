@@ -6,6 +6,7 @@
 using namespace std;
 bool visit[1000];
 vector<int> edge[1000];
+int cnt;
 void dfs(int node) {
 
 	visit[node] = true;
@@ -13,6 +14,7 @@ void dfs(int node) {
 
 	for (int i = 0; i < edge[node].size(); i++) {
 		int next = edge[node][i];
+		cnt++;
 
 		if (visit[next] == false) {
 			visit[node] = true;
@@ -66,6 +68,8 @@ int main(void) {
 	
 	
 	dfs(start - 1);
+
+	cout<<cnt<<"\n";
 	memset(visit, false, sizeof(visit));
 	cout << "\n";
 	bfs(start - 1);
