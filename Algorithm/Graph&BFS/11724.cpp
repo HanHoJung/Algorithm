@@ -11,18 +11,18 @@ bool visit[20000];
 vector<int> edge[20000];
 
 void dfs(int node) {
-	
+
 	visit[node] = true;
 	for (int i = 0; i < edge[node].size(); i++) {
 		num++;
 		int next = edge[node][i];
 		if (visit[next] == false) {
-			
+
 			dfs(next);
 
 		}
 	}
-	
+
 }
 
 void bfs(int node) {
@@ -32,12 +32,12 @@ void bfs(int node) {
 	visit[node] = true;
 
 	while (!q.empty()) {
-		
+
 		int node = q.front();
 		q.pop();
 
 		for (int i = 0; i < edge[node].size(); i++) {
-			num++;
+
 			int next = edge[node][i];
 
 			if (visit[next] == false) {
@@ -71,6 +71,6 @@ int main(void) {
 			cnt++;
 		}
 	}
-	cout << cnt << "\n";
-	cout << num;
+	cout << cnt;
+
 }

@@ -8,6 +8,16 @@ bool visit[20001];
 bool color[20001];
 vector<int> edge[20001];
 
+void dfs2(int node, int c) {
+	color[node] = c;
+	for (int i = 0; i < a[node].size(); i++) {
+		int next = a[node][i];
+		if (color[next] == 0) {
+			dfs(next, 3 - c);
+		}
+	}
+}
+
 void dfs(int node, bool setColor) {
 	visit[node] = true;
 	color[node] = setColor;
@@ -24,7 +34,6 @@ void dfs(int node, bool setColor) {
 }
 
 
-
 void bfs(int start, bool setColor) {
 	queue<int> q;
 	visit[start] = true;
@@ -33,15 +42,11 @@ void bfs(int start, bool setColor) {
 
 	while (!q.empty()) {
 		int node = q.front();
-		setColor = !color[node];/*!setColor;*/
+		setColor = !color[node];
 		q.pop();
-
-
 		for (int i = 0; i < edge[node].size(); i++) {
 			int next = edge[node][i];
-
 			if (visit[next] == false) {
-
 				visit[next] = true;
 				color[next] = setColor;
 				q.push(next);
@@ -80,9 +85,7 @@ int main(void) {
 
 			if (visit[i] == false)
 				bfs(i, true);
-				/*dfs(i, true);*/
-				
-			
+			/*dfs(i, true);*/
 
 
 		}
