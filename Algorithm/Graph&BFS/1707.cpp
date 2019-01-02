@@ -8,16 +8,6 @@ bool visit[20001];
 bool color[20001];
 vector<int> edge[20001];
 
-void dfs2(int node, int c) {
-	color[node] = c;
-	for (int i = 0; i < a[node].size(); i++) {
-		int next = a[node][i];
-		if (color[next] == 0) {
-			dfs(next, 3 - c);
-		}
-	}
-}
-
 void dfs(int node, bool setColor) {
 	visit[node] = true;
 	color[node] = setColor;
