@@ -1,23 +1,3 @@
-/*
-N(0 ≤ N ≤ 100,000)//수빈
-K(0 ≤ K ≤ 100,000)//동생
-
-수빈이의 행동
-1.걷기(왼쪽-, 오른쪽+)
-2.순간이동(2*정점)
-
-가장 빠른 시간
-
-n->n+1
- ->n-1
- ->n*2
-
-가장 빠른 시간(최소비용)
-가중치 1(점을 이용)
-
-
-*/
-
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -31,7 +11,7 @@ int main(void) {
 	queue<int> q;
 	q.push(n);
 	check[n] = true;
-
+	
 	while (!q.empty()) {
 
 		int node = q.front();
