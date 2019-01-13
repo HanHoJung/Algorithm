@@ -2,7 +2,6 @@
 #include <map>
 #include <queue>
 #include <vector>
-#include <map>
 
 using namespace std;
 char MAP[50][50];
@@ -55,35 +54,44 @@ int main(void) {
 
 	tie(startX, startY) = start();
 	tie(destX, destY) = dest();
-	deque<tuple<int, int, bool>> q;
-	q.push_back(make_tuple(startX, startY, false));
+	queue<pair<int, int>> q;
+	q.push(make_pair(startX, startY));
 	check[startX][startY] = true;
 	int t = -1;
 
 	while (!q.empty()) {
-		int x, y, w;
-		tie(x, y, w) = q.front();
-		q.pop_front.pop_back();
+		int x = q.front().first;
+		int y = q.front().second;
 
+		q.pop();
 
-		
 		if (x == destX && y == destY)
 			break;
-		
-		for (int k = 0; k < 4; k++) {
 
-			int newWaterX = x + dx[k];
-			int newWaterY = y + dy[k];
+		if (t != dist[x][y]) {
+			int size = waterLocation.size();
 
+			for (int i = 0; i < size; i++) {
+				int waterX = waterLocation[i].first;
+				int waterY = waterLocation[i].second;
 
-			if (newWaterX < 0 || newWaterX >= n || newWaterY < 0 || newWaterY >= m)
-				continue;
+				for (int k = 0; k < 4; k++) {
 
-			if (check[newWaterX][newWaterY] == false && MAP[newWaterX][newWaterY] != 'X' && MAP[newWaterX][newWaterY] != 'D') {
-				check[newWaterX][newWaterY] = true;
-				MAP[newWaterX][newWaterY] = '*';
-				q.push_back.push_front(make_tuple(newWaterX, newWaterY, true));
+					int newWaterX = waterX + dx[k];
+					int newWaterY = waterY + dy[k];
+
+					if (newWaterX < 0 || newWaterX >= n || newWaterY < 0 || newWaterY >= m)
+						continue;
+
+					if (water[newWaterX][newWaterY] == false && MAP[newWaterX][newWaterY] != 'X' && MAP[newWaterX][newWaterY] != 'D') {
+						water[newWaterX][newWaterY] = true;
+						MAP[newWaterX][newWaterY] = '*';
+						waterLocation.push_back(make_pair(newWaterX, newWaterY));
+					}
+				}
+
 			}
+			t = dist[x][y];
 		}
 
 
@@ -99,7 +107,9 @@ int main(void) {
 			if (check[newX][newY] == false && MAP[newX][newY] != 'X' && MAP[newX][newY] != '*') {
 				check[newX][newY] = true;
 				dist[newX][newY] = dist[x][y] + 1;
-				q.push_back(make_tuple(newX, newY,false));
+				MAP[newX][newY] = 'A';
+				q.push(make_pair(newX, newY));
+
 
 			}
 		}
