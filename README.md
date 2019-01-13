@@ -678,3 +678,21 @@ cout << a << " " << b << " "<<c; //1 2 3
 	
 ```
 
+
+
+> 시뮬레이션 할 때 화면 멈추고 디버깅 
+
+```c++
+#include <conio.h>
+#include <windows.h>
+
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < m; j++) {
+		cout << MAP[i][j];
+	}
+		cout << "\n";
+}
+_getch();//키가 눌릴때까지 멈추기
+system("cls");//화면 지우기
+```
+
