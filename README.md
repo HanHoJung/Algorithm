@@ -863,6 +863,48 @@ arr 배열의 index가 4인 요소의 2차원 좌표는
 
 
 
+> 행과열 늘리기
+
+```c++
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main(void) {
+	int t;
+	cin >> t;
+
+	while (t--) {
+		int h, w;
+		cin >> h >> w;
+
+		vector<string> prision(h+2);
+		h = h + 2;
+		w = w + 2;
+		for (int i = 1; i < h - 1; i++) {
+			cin >> prision[i];
+			prision[i] = "." + prision[i] + ".";
+		}
+		
+
+		for (int i = 0; i < w; i++) {
+			prision[0] = prision[0] + '.';
+			prision[h - 1] = prision[h - 1] + '.';
+		}
+
+		for (int i = 0; i < h; i++) {
+			for (int j = 0; j < w; j++) {
+				cout << prision[i][j];
+			}
+			cout << "\n";
+		}
+
+
+	}
+}
+```
+
 
 
 ## C++ 유용
