@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-
 int n;
 int sign[10][10];
 int arr[10];
