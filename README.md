@@ -1011,9 +1011,9 @@ index = x * n + y
 
 (x/r) * k + y/c
 
-![](D:\Algorithm\assets\metrix01.PNG)
+![metrix01](./assets/metrix01.PNG)
 
-![metrix02](D:\Algorithm\assets\metrix02.PNG)
+![metrix02](./assets/metrix02.PNG)
 
 
 
