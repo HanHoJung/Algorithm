@@ -18,10 +18,6 @@ int main(void) {
 			if (j  >= 1)
 				dp[i][j] = (dp[i - 1][j - 1] + dp[i][j]) % 1000000000;
 
-			if (j == 1) {
-				cout << i << "\n";
-				printf("dp[%d][%d]=%d\n", i-1, j-1,dp[i-1][j-1]);
-			}
 
 			if (j < 9)
 				dp[i][j] = (dp[i - 1][j + 1] + dp[i][j]) % 1000000000;
@@ -29,6 +25,8 @@ int main(void) {
 		}
 	}
 	
+
+		
 	
     
 	long long sum = 0;
