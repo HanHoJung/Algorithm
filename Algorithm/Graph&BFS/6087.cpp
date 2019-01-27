@@ -53,10 +53,10 @@ int main(void) {
 			int nx = x;
 			int ny = y;
 			while (true) {
-				
+
 
 				nx = nx + dx[i];
-				ny = ny+ dy[i];
+				ny = ny + dy[i];
 
 				if (nx < 0 || nx >= n || ny < 0 || ny >= m)
 					break;
@@ -67,12 +67,9 @@ int main(void) {
 				if (MAP[nx][ny] == '*')
 					break;
 
-				
 
 				dist[nx][ny] = dist[x][y] + 1;
 				q.push(make_pair(nx, ny));
-
-			
 
 			}
 
@@ -81,13 +78,6 @@ int main(void) {
 
 	}
 
-
-
-	cout << dist[ex][ey]-1 << "\n";
-
-
-
-
-
+	cout << dist[ex][ey] - 1 << "\n";
 
 }
