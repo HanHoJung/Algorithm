@@ -377,7 +377,7 @@ cf)
     1000111000(2) 
     
     <토글 연산>//1을 0으로 0을 1로
-    S ^ ~(1<<i)
+    S ^ (1<<i)
     
     <전체 집합>
     (1<<N)-1 
@@ -1069,10 +1069,45 @@ map.count(1234) //return 0이면 만들어지지 않는것 return 1이면 만들
 
 ```c++
 string str ="123"
-int index = str.find('2'); //index반환
-                     
+
+/*자료형 변환*/
 int number = stoi(str); //문자열 int로 반환                
 String sentence = to_string(number); //int 문자열로 반환
+
+/*특정 문자 탐색*/
+int index = str.find('2'); //index반환
+
+/*문자열 확장*/
+string base = "hello world!";
+base +="x"; //hello world!x
+또는
+base.append("x");////hello world!x
+
+/*문자열 길이*/
+string base ="123";
+base.length();
+또는
+base.size();
+
+/*특정 위치 문자 받기*/
+string base = "hello world!"; 
+base.at(0); // 'h' 
+base.at(1); // 'e'
+
+
+/*문자열 비교*/
+string a = "I am string one! ;)"; 
+string b = "string"
+    
+if (a.compare(b) == 0) { // 두 문자열이 같을 때 } 
+else if (a.compare(b) < 0) { // a가 b보다 사전순으로 앞일 때 } 
+ else if (a.compare(b) > 0) { // a가 b보다 사전순으로 뒤일 때 }
+
+
+                     
+
+
+
 ```
 
 
