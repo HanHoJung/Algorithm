@@ -226,7 +226,7 @@ int cnt=0;
 int n=100;
 bool check[101];
 
-for(int i=i; i<=n; i++){//루트 n까지(i<=루트n) 검사해도 되지만, 우리는 prime 수를
+for(int i=2; i<=n; i++){//루트 n까지(i<=루트n) 검사해도 되지만, 우리는 prime 수를
                         //primeNumber배열에 모두 저장하기 위해서
     if(check[i]==false){
         primeNumber[cnt++] = i;
@@ -238,7 +238,7 @@ for(int i=i; i<=n; i++){//루트 n까지(i<=루트n) 검사해도 되지만, 우
     }
 }
 
-for(int i=i; i<=n; i++){
+for(int i=2; i<=n; i++){
     if(check[i]==false){
         primeNumber[cnt++] = i;
         for(int j=i*2; j<=n; j=j+i){  //i*i 할 경우 n이 100만 인 경우 int 범위 초과나기때문에
