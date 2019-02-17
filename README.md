@@ -922,9 +922,7 @@ cf)특별한 언급이 없으면 경로와 사이클은 단순 경로/사이클�
 
 
 
-
-
-> LIS(Longest Increasing Subsequence)
+> 가장 긴 증가하는 부분수열 LIS(Longest Increasing Subsequence)
 
 - 수열에는 부분수열이 존재 합니다. 수열의 일부를 선택해서 만든 수열이 순서를 유지하고 증가하는 것 중에 가장 큰 길이를 구하는 알고리즘 입니다.
 - 다이나믹을 이용하면 O(n<sup>2</sup>) 안에 해결할 수 있습니다.
@@ -933,6 +931,12 @@ cf)특별한 언급이 없으면 경로와 사이클은 단순 경로/사이클�
 https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/11053.md
 
 
+
+> Maximum Subarray
+
+- 연속되어 있는 수 중 가장 큰 수열의 합
+
+https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/1912.md
 
 ## 코딩 기법
 
