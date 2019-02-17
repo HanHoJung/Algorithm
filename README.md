@@ -924,10 +924,11 @@ cf)특별한 언급이 없으면 경로와 사이클은 단순 경로/사이클�
 
 
 
-> LSA(Longest Increasing Subsequence))
+> LIS(Longest Increasing Subsequence)
 
 - 수열에는 부분수열이 존재 합니다. 수열의 일부를 선택해서 만든 수열이 순서를 유지하고 증가하는 것 중에 가장 큰 길이를 구하는 알고리즘 입니다.
 - 다이나믹을 이용하면 O(n<sup>2</sup>) 안에 해결할 수 있습니다.
+- 바이노닉 수열 문제 추천
 
 https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/11053.md
 
