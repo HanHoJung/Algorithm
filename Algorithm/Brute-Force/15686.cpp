@@ -7,7 +7,6 @@ vector<pair<int, int>> house;
 vector<pair<int, int>> chicken;
 vector<int> possible;
 
-
 bool check[13];
 int n, m;
 int minVal = -1;
