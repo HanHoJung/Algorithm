@@ -14,10 +14,8 @@ void go(int row, int left, int right, int total) {
 	if ((left < 1) || (right > (2 * row - 1)))
 		return;
 
-
 	int sum = total + s[row][right] - s[row][left - 1];
 	m = max(sum, m);
-
 
 	if (left % 2 == 0) {//礎熱檣 唳辦
 		go(row - 1, left - 2, right, sum);
@@ -25,9 +23,6 @@ void go(int row, int left, int right, int total) {
 	else {//�汝鶺帡瞈�
 		go(row + 1, left, right + 2, sum);
 	}
-
-
-
 
 }
 
