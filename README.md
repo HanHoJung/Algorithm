@@ -940,7 +940,11 @@ https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/1912.md
 
 
 
+>순서의 중복을 제거하기 위한 방법
 
+- 임의의 순서를 정해준다.(코더 임의로) 각각의 경우에 대해서 모두 채워준다.
+
+  
 
 ## 시뮬레이션
 
