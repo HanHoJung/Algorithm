@@ -938,6 +938,20 @@ https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/11053.md
 
 https://github.com/HanHoJung/TIL/blob/master/Alogrithm/DP/1912.md
 
+
+
+
+
+## 시뮬레이션
+
+- 시뮬레이션 문제는 주어진 조건에 맞쳐서 구현하면 되는 문제 유형 입니다.
+
+- 좌표에 회전, 이동방향을 파악하기 어렵다면 좌표가 이동하는 방향을 모두 탐색하는 방법이 효과적 입니다.
+
+  
+
+### 
+
 ## 코딩 기법
 
 > 인덱스로 2차원 좌표 구하기
