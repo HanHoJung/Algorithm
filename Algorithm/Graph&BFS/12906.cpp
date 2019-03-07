@@ -5,7 +5,6 @@
 #include <string>
 using namespace std;
 int main(void) {
-
 	int t = 0;
 	vector<string> arr(3,"");
 	vector<string> output(3, "");
@@ -48,7 +47,6 @@ int main(void) {
 					continue;
 				if (str[i].size() == 0)
 					continue;
-				
 				
 				vector<string> narr(str);
 				narr[j]+= str[i][str[i].size() - 1];
