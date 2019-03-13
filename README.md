@@ -1346,6 +1346,10 @@ string b = "string"
 if (a.compare(b) == 0) { // 두 문자열이 같을 때 } 
 else if (a.compare(b) < 0) { // a가 b보다 사전순으로 앞일 때 } 
  else if (a.compare(b) > 0) { // a가 b보다 사전순으로 뒤일 때 }
+     
+/*한 줄로 입력받기*/     
+string s;
+getline(cin,s);
 
 
                      
