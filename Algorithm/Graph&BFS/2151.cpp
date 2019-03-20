@@ -14,8 +14,6 @@ int main(void) {
 	for (int i = 0; i < n; i++)
 		cin >> MAP[i];
 
-
-
 	//1단계 모델링(번호 매기기)
 	int num = 0;
 	int start = -1, end = -1;//벽의 시작과 끝 번호
@@ -72,8 +70,6 @@ int main(void) {
 			}
 		}
 	}
-
-
 
 	vector<int> dist(m,-1);
 	queue<int> q;
