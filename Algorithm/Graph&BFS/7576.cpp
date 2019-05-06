@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <algorithm>
+#include <cstring>
 using namespace std;
 
 
@@ -15,7 +16,7 @@ int m, n;
 int main(void) {
 	cin >> m >> n;
 	queue<pair<int, int>> q;
-
+	memset(dist, -1, sizeof(dist));
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			scanf("%d", &edge[i][j]);
@@ -23,13 +24,14 @@ int main(void) {
 			if (edge[i][j] == 1) {
 				q.push(make_pair(i, j));
 				check[i][j] = true;
+				dist[i][j] = 0;
 			}
 		}
 	}
 
 	
-	
-	
+
+
 	while (!q.empty()) {
 		int x = q.front().first;
 		int y = q.front().second;
@@ -40,13 +42,12 @@ int main(void) {
 			int new_x = x + dx[i];
 			int new_y = y + dy[i];
 
-			if (new_x<0 || new_x>=n || new_y<0 || new_y>=m)
+			if (new_x < 0 || new_x >= n || new_y < 0 || new_y >= m)
 				continue;
 
-			if (edge[new_x][new_y] ==0 && check[new_x][new_y] == false) {
+			if (edge[new_x][new_y] == 0 && check[new_x][new_y] == false) {
 				check[new_x][new_y] = true;
 				dist[new_x][new_y] = dist[x][y] + 1;
-				edge[new_x][new_y] = dist[new_x][new_y];
 				q.push(make_pair(new_x, new_y));
 			}
 		}
@@ -55,30 +56,32 @@ int main(void) {
 	}
 
 
-	int dayMax = 1;
+	int dayMax = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
-	
-			int value = edge[i][j];
+			if (edge[i][j] == -1)
+				continue;
+
+			int value = dist[i][j];
 			dayMax = max(dayMax, value);
-			if (value == 0) {
-				//Åä¸¶Åä°¡ ¸ðµÎ ÀÍÁö ¾ÊÀº »óÈ²
+			if (value == -1) {
+				//í† ë§ˆí† ê°€ ëª¨ë‘ ìµì§€ ì•Šì€ ìƒí™©
 				cout << -1 << "\n";
 				return 0;
 			}
 		}
 	}
 
-	if (dayMax == 1) {
-		//ÀúÀåµÉ ¶§ºÎÅÍ ¸ðµç Åä¸¶Åä°¡ ÀÍ¾îÀÖ´Â »óÅÂ
-		cout << dayMax-1 << "\n";
+	if (dayMax == 0) {
+		//ì €ìž¥ë  ë•Œë¶€í„° ëª¨ë“  í† ë§ˆí† ê°€ ìµì–´ìžˆëŠ” ìƒíƒœ
+		cout << dayMax  << "\n";
 		return 0;
 	}
 	else {
-		//¿Ï¼÷ Åä¸¶Åä^^
+		//ì™„ìˆ™ í† ë§ˆí† ^^
 		cout << dayMax << "\n";
 		return 0;
 	}
-	
+
 
 }
