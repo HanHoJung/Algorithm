@@ -24,40 +24,40 @@ int fludfill(int MAP[][9]) {
 	}
 
 
+	queue<pair<int, int>> q;
+	bool visit[9][9];
+	memset(visit, false, sizeof(visit));
 	for (int i = 0; i < virus.size(); i++) {
 		int x = virus[i].first;
 		int y = virus[i].second;
-		bool visit[9][9];
-		memset(visit, false, sizeof(visit));
 
-		queue<pair<int, int>> q;
 		q.push(make_pair(x, y));
-		check[x][y] = true;
-
-		while (!q.empty()) {
-			int x = q.front().first;
-			int y = q.front().second;
-			q.pop();
-
-			for (int i = 0; i < 4; i++) {
-
-				int nx = x + dx[i];
-				int ny = y + dy[i];
-				if (nx < 0 || nx >= n || ny < 0 || ny >= m)
-					continue;	
-
-				if (copy[nx][ny] == 0 && visit[nx][ny] == false) {
-					visit[nx][ny] = true;
-					copy[nx][ny] = 2;
-					q.push(make_pair(nx, ny));
-				}
-			}
-
-		}
+		visit[x][y] = true;
+		copy[x][y] = 2;
 
 	}
 
-	
+
+	while (!q.empty()) {
+		int x = q.front().first;
+		int y = q.front().second;
+		q.pop();
+
+		for (int i = 0; i < 4; i++) {
+
+			int nx = x + dx[i];
+			int ny = y + dy[i];
+			if (nx < 0 || nx >= n || ny < 0 || ny >= m)
+				continue;
+
+			if (copy[nx][ny] == 0 && visit[nx][ny] == false) {
+				visit[nx][ny] = true;
+				copy[nx][ny] = 2;
+				q.push(make_pair(nx, ny));
+			}
+		}
+
+	}
 
 	int count = 0;
 
@@ -67,21 +67,20 @@ int fludfill(int MAP[][9]) {
 				count++;
 		}
 	}
-	
-	
+
 	return count;
 }
 
 
 void wall(int cnt) {
-	
+
 	if (cnt == 3) {
 		int value = fludfill(MAP);
 
 		if (maxVal < value)
 			maxVal = value;
 
-		
+
 		return;
 	}
 
@@ -103,7 +102,7 @@ void wall(int cnt) {
 }
 
 
-int main(void){
+int main(void) {
 
 	cin >> n >> m;
 
@@ -115,7 +114,7 @@ int main(void){
 			}
 		}
 	}
-	
+
 	wall(0);
 	cout << maxVal << "\n";
 }
